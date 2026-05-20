@@ -840,7 +840,7 @@ class Config:
     akshare_sleep_max: float = 5.0
     
     # Tushare 每分钟最大请求数（免费配额）
-    tushare_rate_limit_per_minute: int = 80
+    tushare_rate_limit_per_minute: int = 500
     
     # 重试配置
     max_retries: int = 3
