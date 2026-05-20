@@ -1023,7 +1023,7 @@ class DataFetcherManager:
         tushare_rate = getattr(config, "tushare_rate_limit_per_minute", 80)
         optional_fetchers.append(TushareFetcher(rate_limit_per_minute=tushare_rate)) # 会根据 Token 配置自动调整优先级
         else:
-            logger.debug("[数据源初始化] 跳过未配置的 TushareFetcher")
+        logger.debug("[数据源初始化] 跳过未配置的 TushareFetcher")
 
         has_longbridge_creds = bool(
             (getattr(config, "longbridge_app_key", None) or "").strip()
