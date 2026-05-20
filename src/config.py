@@ -839,7 +839,7 @@ class Config:
     akshare_sleep_min: float = 2.0
     akshare_sleep_max: float = 5.0
     
-    # Tushare 每分钟最大请求数（免费配额）
+    # Tushare 每分钟最大请求数（Pro 6000积分可设200-400）
     tushare_rate_limit_per_minute: int = 500
     
     # 重试配置
@@ -1290,6 +1290,7 @@ class Config:
             feishu_app_secret=os.getenv('FEISHU_APP_SECRET'),
             feishu_folder_token=os.getenv('FEISHU_FOLDER_TOKEN'),
             tushare_token=os.getenv('TUSHARE_TOKEN'),
+             tushare_rate_limit_per_minute=parse_env_int(os.getenv('TUSHARE_RATE_LIMIT_PER_MINUTE'), 500, field_name='TUSHARE_RATE_LIMIT_PER_MINUTE', minimum=10),
             tickflow_api_key=os.getenv('TICKFLOW_API_KEY'),
             finnhub_api_key=os.getenv('FINNHUB_API_KEY') or None,
             alphavantage_api_key=os.getenv('ALPHAVANTAGE_API_KEY') or None,
